@@ -1,7 +1,7 @@
 import unittest
 
 from abs_implementation.implementation import RealPosition, RealVelocity, Vector
-from abstracts.move import Velocity, Position, Move
+from abs_implementation.move import Velocity, Position, Move
 from ship import Ship
 
 

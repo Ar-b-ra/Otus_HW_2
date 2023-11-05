@@ -1,13 +1,18 @@
-from abc import ABC, abstractmethod
+import math
+from abc import abstractmethod
+from dataclasses import dataclass
 
 ANGLE_STEPS = 36000
 
 
-class Rotate(ABC):
-
-    def __init__(self, init_direction):
-        self.direction = init_direction
+@dataclass
+class Rotate:
+    angle: int = 0
 
     @abstractmethod
-    def rotate(self, direction):
-        self.direction = direction
+    def get_angle(self):
+        return self.angle
+
+    @abstractmethod
+    def get_new_velocity(self, *args, **kwargs):
+        return
