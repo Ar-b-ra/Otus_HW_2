@@ -1,21 +1,11 @@
-from abc import ABC
-from dataclasses import dataclass
+from move import Move, Position, Velocity
+from rotate import Rotate, Direction
 
 
-@dataclass
-class Ship:
-    x: int = 0
-    y: int = 0
-    velocity: (int, int) = 0, 0
-    direction: float = 0  # угол, на который повёртун корабль относительно начала коордигнат
+class Ship(Move, Rotate):
+    def move(self):
+        # self.rotate()
+        super().move()
 
-
-class Movable(ABC):
-
-    def move(self, *args, **kwargs):
-        pass
-
-
-class Rotatable(ABC):
-    def rotate(self, *args, **kwargs):
-        pass
+    def rotate(self, new_direction: Direction):
+        new_coord = Velocity(5, 7)
