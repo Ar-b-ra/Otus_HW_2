@@ -1,11 +1,15 @@
-from move import Move, Position, Velocity
-from rotate import Rotate, Direction
+from abs_implementation.implementation import Vector
+from abstracts.move import Move
+from abstracts.rotate import Rotate
+from abstracts.vector import Position
 
 
 class Ship(Move, Rotate):
-    def move(self):
-        # self.rotate()
-        super().move()
+    def __init__(self, vector: Vector):
+        super().__init__(vector)
 
-    def rotate(self, new_direction: Direction):
-        new_coord = Velocity(5, 7)
+    def go_to_position(self, new_position: Position):
+        self.vector.set_position(new_position)
+
+    def rotate(self, direction):
+        pass
