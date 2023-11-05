@@ -16,7 +16,7 @@ class MovingObjectTest(unittest.TestCase):
         self.ship.set_position(RealPosition(12, 5))
         self.ship.set_velocity(RealVelocity(-7, 3))
         self.ship.move()
-        self.assertEquals(self.ship.get_position(), (5, 8))
+        self.assertEqual(self.ship.get_position(), (5, 8))
 
     def test_no_velocity(self):
         with self.assertRaises(NotImplementedError):
